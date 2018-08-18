@@ -240,13 +240,10 @@ class GeneratorConfig
 
         if (!empty($this->prefixes['ns'])) {
             $commandData->addDynamicVariable('$PATH_PREFIX$', $this->prefixes['ns'].'\\');
+            $commandData->addDynamicVariable('$MIGRATION_PREFIX$', $this->prefixes['ns'].'');
+
         } else {
             $commandData->addDynamicVariable('$PATH_PREFIX$', '');
-        }
-
-        if (!empty($this->prefixes['ns'])) {
-            $commandData->addDynamicVariable('$MIGRATION_PREFIX$', $this->prefixes['ns']);
-        } else {
             $commandData->addDynamicVariable('$MIGRATION_PREFIX$', '');
         }
 
