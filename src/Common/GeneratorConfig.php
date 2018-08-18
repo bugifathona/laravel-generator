@@ -244,6 +244,12 @@ class GeneratorConfig
             $commandData->addDynamicVariable('$PATH_PREFIX$', '');
         }
 
+        if (!empty($this->prefixes['ns'])) {
+            $commandData->addDynamicVariable('$MIGRATION_PREFIX$', $this->prefixes['ns']);
+        } else {
+            $commandData->addDynamicVariable('$MIGRATION_PREFIX$', '');
+        }
+
         if (!empty($this->prefixes['view'])) {
             $commandData->addDynamicVariable('$VIEW_PREFIX$', str_replace('/', '.', $this->prefixes['view']).'.');
         } else {
